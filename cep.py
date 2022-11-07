@@ -28,19 +28,21 @@ def obter_cep():
 
 
 janela = Tk()
-janela.title('Busca endereço por CEP')
+janela.title('Buscar endereço por CEP')
 janela.geometry('310x200')
 
-orientacao = Label(janela, text='Clique no botao para exibir endereço')
-orientacao.grid(column=0, row=0, padx=50, pady=10)
+orientacao = Label(janela, text='Digite o CEP no campo abaixo')
+orientacao.grid(column=0, row=0, padx=70, pady=10)
 
 cep = Entry(janela, )
 cep.grid(column=0, row=1)
 
 botao = Button(janela, text='Buscar CEP!', command = obter_cep)
-botao.grid(column=0, row=2)
+#botao.grid(column=0, row=2)
+botao.place(x=120,y=70)
 
 texto_resultado = Label(janela, text = "")
-texto_resultado.grid(column=0, row=3)
+#texto_resultado.grid(column=0, row=3)
+texto_resultado.place(x=70,y=100)
 
 janela.mainloop()
