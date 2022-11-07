@@ -26,9 +26,6 @@ def obter_cep():
         texto_resultado['text'] = resultado
         print(armazenar_cep)
 
-        
-    
-
 
 janela = Tk()
 janela.title('Busca endereço por CEP')
@@ -40,14 +37,10 @@ orientacao.grid(column=0, row=0, padx=50, pady=10)
 cep = Entry(janela, )
 cep.grid(column=0, row=1)
 
-
-#print(armazenar_cep)
-
 botao = Button(janela, text='Buscar CEP!', command = obter_cep)
 botao.grid(column=0, row=2)
 
 texto_resultado = Label(janela, text = "")
 texto_resultado.grid(column=0, row=3)
-
 
 janela.mainloop()
