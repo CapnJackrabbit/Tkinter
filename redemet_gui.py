@@ -2,12 +2,12 @@ import requests, datetime
 from tkinter import *
 from textwrap import *
 
-chave = 'api_key=2JEa2iWav9FvjNdFfvoQVUUGs3ZZP7CHCs33FZ0a'
+chave = '2JEa2iWav9FvjNdFfvoQVUUGs3ZZP7CHCs33FZ0a'
 
 def obter():
     global icao, inicio, fim
     icao_get = icao.get()
-    requisicao = requests.get('https://api-redemet.decea.mil.br/mensagens/metar/{}?api_key=2JEa2iWav9FvjNdFfvoQVUUGs3ZZP7CHCs33FZ0a&{}&{}'.format(icao_get,inicio,fim))
+    requisicao = requests.get('https://api-redemet.decea.mil.br/mensagens/metar/{}?api_key={}&{}&{}'.format(icao_get,chave,inicio,fim))
     print(requisicao)
 
     requisicao_dic = requisicao.json()
@@ -29,9 +29,8 @@ def obter():
 
 
 def obter_taf():
-    global icao, inicio, fim
     icao_get = icao.get()
-    requisicao = requests.get('https://api-redemet.decea.mil.br/mensagens/taf/{}?api_key=2JEa2iWav9FvjNdFfvoQVUUGs3ZZP7CHCs33FZ0a&{}&{}'.format(icao_get,inicio,fim))
+    requisicao = requests.get('https://api-redemet.decea.mil.br/mensagens/taf/{}?api_key={}&{}&{}'.format(icao_get,chave,inicio,fim))
     print(requisicao)
 
     requisicao_dic = requisicao.json()
